@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>WC Menu Button</title>
+    <script src="/build/wc-menu-button.js"></script>
+  </head>
+  <body>
+    <wc-menu-button id="myButton" width="60" color="#888234"></wc-menu-button>
+
+    <script>
+      const myMenuIcon = document.querySelector("#myButton");
+      myMenuIcon.addEventListener("opened", ev => {
+        console.log("menu was opened");
+      });
+      myMenuIcon.addEventListener("closed", ev => {
+        console.log("menu was closed");
+      });
+    </script>
+  </body>
+</html>

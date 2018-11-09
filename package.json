@@ -1,0 +1,32 @@
+{
+  "name": "wc-menu-button",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@stencil/core": "~0.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wes566/wc-menu-button.git"
+  },
+  "author": "Wes Peter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wes566/wc-menu-button"
+  },
+  "homepage": "https://github.com/wes566/wc-menu-button"
+}
