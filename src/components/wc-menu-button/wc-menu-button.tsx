@@ -8,9 +8,6 @@ import { Component, Prop, State, Event, EventEmitter } from "@stencil/core";
 export class WcMenuButton {
   // TODO: jsdoc these props and events
   @Prop() isOpen: boolean | undefined;
-  @Prop() color: string | undefined;
-  @Prop() width: number | undefined;
-  @Prop() noScaleOnHover: boolean;
 
   @Event() opened: EventEmitter;
   @Event() closed: EventEmitter;
@@ -45,34 +42,12 @@ export class WcMenuButton {
       classes += " open";
     }
 
-    // check if we want to disable the scale on hover
-    if (this.noScaleOnHover) {
-      classes += " no-scale";
-    }
-
-    // set the color
-    // TODO: validate hex color string
-    const spanColor = this.color || "#000000";
-    const spanStyle = { backgroundColor: spanColor };
-
-    // set the width
-    let iconWidth = "37px";
-    if (this.width !== undefined && this.width >= 0) {
-      iconWidth = `${this.width}px`;
-    }
-    const containerStyle = { width: iconWidth };
-
     return (
-      <div
-        id="menu-icon"
-        class={classes}
-        onClick={this.handleClick}
-        style={containerStyle}
-      >
-        <span style={spanStyle} />
-        <span style={spanStyle} />
-        <span style={spanStyle} />
-        <span style={spanStyle} />
+      <div id="menu-icon" class={classes} onClick={this.handleClick}>
+        <span />
+        <span />
+        <span />
+        <span />
       </div>
     );
   }

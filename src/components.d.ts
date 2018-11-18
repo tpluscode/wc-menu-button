@@ -13,18 +13,12 @@ import '@stencil/core';
 export namespace Components {
 
   interface WcMenuButton {
-    'color': string | undefined;
     'isOpen': boolean | undefined;
-    'noScaleOnHover': boolean;
-    'width': number | undefined;
   }
   interface WcMenuButtonAttributes extends StencilHTMLAttributes {
-    'color'?: string | undefined;
     'isOpen'?: boolean | undefined;
-    'noScaleOnHover'?: boolean;
     'onClosed'?: (event: CustomEvent) => void;
     'onOpened'?: (event: CustomEvent) => void;
-    'width'?: number | undefined;
   }
 }
 
