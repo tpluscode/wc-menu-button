@@ -13,6 +13,7 @@
   transition: 0.5s ease-in-out;
   cursor: default;
   transition: all 0.2s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* this trick makes the height 75% of the width (4:3 ratio) */
@@ -22,12 +23,10 @@
   content: "";
 }
 
-.menu-icon:hover {
-  opacity: var(--wc-menu-button-hover-opacity, 0.75);
-}
-
-.no-scale:hover {
-  transform: none;
+@media (hover: hover) {
+  .menu-icon:hover {
+    opacity: var(--wc-menu-button-hover-opacity, 0.75);
+  }
 }
 
 .menu-icon span {
