@@ -1,6 +1,6 @@
 {
   "name": "wc-menu-button",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple, animating menu button built as a Web Component",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "publish": "npm build && npm publish --access=public"
+    "prepublish": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
