@@ -46,7 +46,7 @@ Since wc-menu-button is a web component vanilla JS or any front-end framework ca
 </html>
 ```
 
-Also, see [src/indeox.html](index.html) for an example.
+Also, see [index.html](src/index.html) as an example.
 
 ### From React
 
