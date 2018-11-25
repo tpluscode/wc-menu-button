@@ -13,10 +13,12 @@ import '@stencil/core';
 export namespace Components {
 
   interface WcMenuButton {
-    'isOpen': boolean | undefined;
+    'isOpen'?: boolean;
+    'isOpenChangedFunc'?: (isOpen: boolean) => void;
   }
   interface WcMenuButtonAttributes extends StencilHTMLAttributes {
-    'isOpen'?: boolean | undefined;
+    'isOpen'?: boolean;
+    'isOpenChangedFunc'?: (isOpen: boolean) => void;
     'onClosed'?: (event: CustomEvent) => void;
     'onOpened'?: (event: CustomEvent) => void;
   }

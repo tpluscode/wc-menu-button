@@ -243,7 +243,7 @@
     <main>
       <section class="hero">
         <h1>wc-menu-button</h1>
-        <h2>A simple animating menu web component</h2>
+        <h2>A simple, animating menu web component</h2>
         <div class="hero-demo">
           <wc-menu-button class="big-icon accent-icon"></wc-menu-button>
         </div>
@@ -420,6 +420,10 @@
         myMenuIcon.addEventListener("closed", ev => {
           console.log("menu was closed");
         });
+      }
+
+      function handleChanged(isOpen) {
+        console.log("menu has changed");
       }
     </script>
   </body>

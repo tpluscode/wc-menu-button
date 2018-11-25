@@ -7,7 +7,8 @@ import { Component, Prop, State, Event, EventEmitter } from "@stencil/core";
 })
 export class WcMenuButton {
   // TODO: jsdoc these props and events
-  @Prop() isOpen: boolean | undefined;
+  @Prop() isOpen?: boolean;
+  @Prop() isOpenChangedFunc?: (isOpen: boolean) => void;
 
   @Event() opened: EventEmitter;
   @Event() closed: EventEmitter;
@@ -28,6 +29,10 @@ export class WcMenuButton {
       this.opened.emit(null);
     } else {
       this.closed.emit(null);
+    }
+
+    if (!!this.isOpenChangedFunc) {
+      this.isOpenChangedFunc(newOpenedValue);
     }
   };
 

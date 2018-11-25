@@ -8,9 +8,9 @@ A simple, animating menu button built as a Web Component.
 
 ## Installation
 
-You can source wc-menu-button from UNPKG CDN or NPM.
+You can integrate wc-menu-button via `<script>` tag or via ES Modules.
 
-### via UNPKG
+### Via `<script>` tag
 
 In the `<head>` of your index.html put a script tag like this:
 
@@ -20,19 +20,45 @@ In the `<head>` of your index.html put a script tag like this:
 
 Now you can use the `wc-menu-button` element anywhere in your html, JSX, template, etc.
 
-### via NPM
+### Via ES Modules
 
 ```bash
 npm install wc-menu-button --save
 ```
 
-Then in the `<head>` of your index.html put a script tag like this:
+Then, depending on the framework you are integrating into, follow the [StencilJS instructions on integration](https://stenciljs.com/docs/overview). Note: You don't have to know how StencilJS works, that site just has a nice summary of integration instructions.
 
-```html
-<script src="node_modules/wc-menu-button/dist/wc-menu-button.js"></script>
+#### React example
+
+As an example, for **React** you would add the following to your `index.js`:
+
+```js
+// some imports up here
+// ...
+import { defineCustomElements } from "test-components/dist/loader";
+
+// render your app
+ReactDOM.render(<App />, document.getElementById("root"));
+
+// define wc-menu-button by calling defineCustomElement
+defineCustomElements(window);
 ```
 
-Now you can use the `wc-menu-button` element anywhere in your html, JSX, template, etc.
+Now you can use the `wc-menu-button` element anywhere in your JSX.
+
+To know when the menu button was opened/closed you can pass in a function via the ref attribute on `wc-menu-button`, like this:
+
+```html
+<wc-menu-button
+    ref={menuButton => {
+        if(menuButton){
+            menuButton.isOpenChangedFunc=this.handleMenuOpenChanged
+        }
+    }>
+</wc-menu-button>
+```
+
+Note: there are [some caveats](https://reactjs.org/docs/refs-and-the-dom.html#caveats-with-callback-refs) when using an inline function with ref (like in this example), so make sure you read the React docs to decide if you want to inline the callback like that.
 
 ## Usage and Customization
 
@@ -50,15 +76,17 @@ Also, see [index.html](src/index.html) as an example.
 
 ### From React
 
-TODO: fill this part in
+Once the script tag is in your `public/index.html` file (as detailed in [Installation :point_up:](#installation)) you can then use the `<wc-menu-button>` element in your JSX/TSX.
 
-### From Angular
+<!-- To see an example of a create-react-app typescript app consuming a web component (complete with TS typings), then check out [this sample repo](https://github.com/wes566/sample-react-consumes-web-component). -->
+
+<!-- ### From Angular
 
 TODO: fill this part in
 
 ### From Vue
 
-TODO: fill this part in
+TODO: fill this part in -->
 
 ## Contribute
 
