@@ -28,65 +28,43 @@ npm install wc-menu-button --save
 
 Then, depending on the framework you are integrating into, follow the [StencilJS instructions on integration](https://stenciljs.com/docs/overview). Note: You don't have to know how StencilJS works, that site just has a nice summary of integration instructions.
 
-#### React example
+### React example
 
-As an example, for **React** you would add the following to your `index.js`:
+There are 2 sample repos (one in JS and one in TS) that demonstrate using `wc-menu-button` web component in a React app. They demonstrate installing, setting the `is-open` attribute to a changing state object, and listening for changes by setting the `isOpenChangedFunc`.
 
-```js
-// some imports up here
-// ...
-import { defineCustomElements } from "test-components/dist/loader";
+[React consuming wc-menu-button sample repo](https://github.com/wes566/sample-react-consumes-web-component)
 
-// render your app
-ReactDOM.render(<App />, document.getElementById("root"));
+[React in Typescript consuming wc-menu-button sample repo](https://github.com/wes566/sample-react-ts-consumes-web-component)
 
-// define wc-menu-button by calling defineCustomElement
-defineCustomElements(window);
-```
+## API and Customization
 
-Now you can use the `wc-menu-button` element anywhere in your JSX.
+### Props
 
-To know when the menu button was opened/closed you can pass in a function via the ref attribute on `wc-menu-button`, like this:
+- `isOpen: boolean`
+  - NOTE: the attribute name is `is-open` in html or React JSX
+  - Tells the menu button if it should be in the open (X) or closed (hamburger) state
+- `isOpenChangedFunc: (isOpen) => void`
+  - A func that gets called whenever the `isOpen` state changes
 
-```html
-<wc-menu-button
-    ref={menuButton => {
-        if(menuButton){
-            menuButton.isOpenChangedFunc=this.handleMenuOpenChanged
-        }
-    }>
-</wc-menu-button>
-```
+### Events
 
-Note: there are [some caveats](https://reactjs.org/docs/refs-and-the-dom.html#caveats-with-callback-refs) when using an inline function with ref (like in this example), so make sure you read the React docs to decide if you want to inline the callback like that.
+- `opened`
+- `closed`
 
-## Usage and Customization
+### Styling
 
-Since wc-menu-button is a web component vanilla JS or any front-end framework can consume it.
+If you set certain CSS variables then the `wc-menu-button` will use those styles. There are examples in [index.html](src/index.html).
 
-### Vanilla JS
-
-```html
-<html>
-  <wc-menu-button></wc-menu-button>
-</html>
-```
-
-Also, see [index.html](src/index.html) as an example.
-
-### From React
-
-Once the script tag is in your `public/index.html` file (as detailed in [Installation :point_up:](#installation)) you can then use the `<wc-menu-button>` element in your JSX/TSX.
-
-<!-- To see an example of a create-react-app typescript app consuming a web component (complete with TS typings), then check out [this sample repo](https://github.com/wes566/sample-react-consumes-web-component). -->
-
-<!-- ### From Angular
-
-TODO: fill this part in
-
-### From Vue
-
-TODO: fill this part in -->
+- `--wc-menu-button-width`
+  - Sets the menu button width (and height will be proportionally adjusted as well)
+  - Default is `37px`
+- `--wc-menu-button-color`
+  - Sets the color of the menu button
+  - Default is `#000000` (black)
+- `--wc-menu-button-hover-opacity`
+  - Sets the hover opacity
+  - Default is `0.75`
+  - Set to `1.0` if you do not want any hover opacity effect
 
 ## Contribute
 
