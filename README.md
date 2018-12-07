@@ -72,9 +72,15 @@ If you set certain CSS variables then the `wc-menu-button` will use those styles
 
 This project is based on [StencilJS](https://github.com/ionic-team/stencil-component-starter).
 
-```
+```bash
 npm install
 npm start
 ```
 
 That will start a dev server and open your browser to http://localhost:3333
+
+## Acknowledgements
+
+Thanks to [BrowserStack](https://www.browserstack.com/) for cross browser testing.
+
+[![BrowserStack](./browserstack-logo.png)](https://www.browserstack.com/)
