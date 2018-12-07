@@ -1,6 +1,6 @@
 {
   "name": "wc-menu-button",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "A simple, animating menu button built as a Web Component",
   "keywords": [
     "web component",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wes566/wc-menu-button.git"
+    "url": "https://github.com/wes566/wc-menu-button"
   },
   "author": "Wes Peter",
   "license": "MIT",
